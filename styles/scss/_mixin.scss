@@ -1,0 +1,134 @@
+// div head
+@mixin h1{
+    color: $color_blue;
+    font-size: $font_h1;
+    font-family: $font_josefin;
+}
+
+@mixin inputHead{
+    margin-top: 10px;
+    width: 400px;
+    border: none;
+    background-color: $color_gray;
+    padding: 5px;
+}
+
+@mixin linkHead{
+    text-decoration: none;
+    color: $color_blue;
+}
+
+// navbar
+@mixin linkNav {
+    text-decoration: none;
+    color: $color_beige;
+    font-size: 20px;
+    font-family: $font_poppins;
+}
+
+@mixin menuDeroulant{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: $color_beige;
+    top: 100%;
+    left: 0;
+}
+
+// div presentation
+@mixin presentationParagraphe{
+    margin-top: 30px;
+    font-size: $font_p;
+    color: $color_blue;
+    font-family: $font_poppins;
+    font-style: italic;
+}
+
+@mixin backgroundH2{
+    font-size: $font_h2;
+    color: $color_beige;
+    text-align: center;
+    padding-top: 300px;
+    font-family: $font_poppins;
+    font-style: italic;
+}
+
+@mixin presentationText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+// section articles
+@mixin hoverImg{
+    border: 2px solid $color_blue;
+    box-shadow: 5px 5px 5px 0px $color_blue, inset 4px 4px 15px 0px $color_blue, -5px -5px 5px -1px $color_blue;    cursor: pointer;
+    animation: ZoomAnimation 2s ease-in-out infinite;
+    @keyframes ZoomAnimation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+@mixin titleArticle{
+    margin: 0 30px;
+    color: $color_blue;
+    font-size: $font_h3;
+    font-weight: bold;
+    font-family: $font_poppins;
+    font-style: italic;
+    text-align: center;
+}
+
+// footer
+@mixin linkFooter{
+    text-decoration: none;
+    color: $color_white;
+    font-family: $font_poppins;
+}
+
+@mixin HeadResponsive{
+    background-color: $color_blue;
+    display: flex;
+    flex-direction: row;
+    margin: 0%;
+}
+
+@mixin HeadResponsiveH1{
+    color: $color_beige;
+    font-size: 30px;
+    font-family: $font_josefin;
+}
+
+// articlePAGE
+@mixin btnArticle{
+    background-color: $color_beige;
+    width: 30%;
+    color: $color_blue;
+    border-radius: 5px;
+    &:hover{
+        background-color: $color_blue;
+        color: $color_white;
+        cursor: pointer;
+    }
+}
+
+// page form
+@mixin titleForm{
+    color: $color_blue;
+    font-size: $font_h2;
+    font-family: $font_poppins;
+    text-align: center;
+    margin-top: 50px;
+}
+
+

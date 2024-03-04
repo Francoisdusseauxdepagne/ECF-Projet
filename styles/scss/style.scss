@@ -1,0 +1,470 @@
+// import fichers scss
+@import "variable";
+@import "mixin";
+
+// import bootstrap
+@import"../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// import google fonts
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// import font-awesome
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+// class for js
+.letter {
+    opacity: 0;
+    transition: opacity 0.3s ease ;
+}
+
+.beige{
+    background-color: $color_beige;
+    color: $color_blue;
+    &:hover{
+        background-color: $color_blue;
+        color: $color_beige;
+    }
+}
+
+.error {
+    input, textarea {
+        color: $error-color;
+        border: 2px solid $error-color;
+    }
+    small, textarea {
+        color: $error-color;
+    }
+}
+
+.success {
+    input, textarea {
+        color: $success-color;
+        border: 2px solid $success-color;
+    }
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+// header
+.head{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    @media screen and (max-width: 425px) {
+        @include HeadResponsive;
+        justify-content: initial;
+    }
+    .headMobile{
+        @media screen and (max-width: 425px) {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 100px;
+            padding-top: 15px;
+        }
+    }
+        h1{
+            text-align: center;
+            @include h1;
+            @media screen and (max-width: 425px) {
+                @include HeadResponsiveH1
+            }
+        }
+        .logos{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-right: 20px;
+            gap: 20px;
+            @media screen and (max-width: 425px) {
+                display: none;
+                width: 1%;
+            }
+            .connexion, .panier{
+                text-align: center;
+                &_link{
+                    @include linkHead;
+                    &:hover{
+                        text-decoration: underline $color_blue;
+                    }
+                }
+            img{
+                width: 30px;
+            }
+        }
+    }
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    background-color: $color_blue;
+    padding: 25px;
+    &_link{
+        @include linkNav;
+    }
+    .menu{
+        position: relative;
+        .menuDeroulant{
+            @include menuDeroulant;
+            ul{
+                padding: 5px;
+                list-style-type: none;
+                li>a{
+                    color: $color_blue;
+                    text-decoration: none;
+                    font-family: $font_poppins;
+                    &:hover{
+                        text-decoration: underline;
+                        color: $color_white; 
+                    }
+                }
+            }
+            &_link{
+                @include linkNav;
+            }
+        }
+        &:hover .menuDeroulant{
+            display: block;
+        }
+    }
+    @media screen and (max-width: 425px) {
+        display: none;
+    }
+}
+
+.background{
+    background-image: url(../../images/Autres/backgroundAccueil.jpeg);
+    height: 100vh;
+    @media screen and (max-width: 768px) {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 30px;
+    }
+    h2{
+        @include backgroundH2;
+    }
+}
+
+// section 1
+.presentation{
+    background-color: $color_beige;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 30px;
+        &_img{
+        width: 100%;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+        &_text{
+            background-color: $color_beige;
+            @include presentationText;
+            &--paragraphe{
+            @include presentationParagraphe;
+        }
+    }
+    h2{
+        font-family: $font_poppins;
+        color: $color_blue;
+    }
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// section 2 (section 3 container)
+.sport, .panier2 {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        &_line {
+        height: 1px;
+        background-color: $color_blue;
+        }
+        &_title {
+        @include titleArticle;
+            @media screen and (max-width: 768px) {
+            text-align: center;
+        }
+    }
+}
+
+.container {
+    text-align: center;
+    margin-top: 30px;
+        .rowSport, .rowEssentiel {
+            .colCard{
+                &_img {
+                    border-radius: 10px;
+                    &:hover{
+                    @include hoverImg;
+                    }
+                }
+                &_text{
+                    position: relative;
+                    text-align: center;
+                    font-size: 25px;
+                    font-family: $font_poppins;
+                    color: $color_white;
+                    font-weight: bold;
+                    left: 0px;
+                    bottom: 450px;
+                }
+            }
+        }
+    }
+
+.textSport{
+    margin: 10px;
+    padding-bottom: 25px;
+    @media screen and (max-width: 425px) {
+        display: none;
+    }
+    &_paragraphe{
+        font-size: $font_p;
+        font-family: $font_poppins;
+        font-style: italic;
+
+    }
+}
+
+// section 3
+#essentiel {
+    background-color: $color_beige;
+    padding-top: 1px;
+    .essentiel {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            &_line {
+            height: 1px;
+            background-color: $color_blue;
+        }
+            &_title {
+            @include titleArticle;
+            @media screen and (max-width: 768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+// section 4
+.logoInformation {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    @media screen and (max-width: 425px){
+        display: flex;
+        flex-direction: column;
+    }
+    .cadenas, .delivery, .valid {
+        img{
+            width: 8vh;
+        }
+        p{
+            font-family: $font_poppins;
+            margin-top: 15px;
+        }
+    }
+}
+
+// footer
+footer{
+    background-color: $color_blue;
+    color: $color_white;
+}
+
+.footer{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    @media screen and (max-width: 425px) {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .network{
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            list-style-type: none;
+        }
+        &_link{
+            @include linkFooter;
+            font-size: $font_linkFooter;
+                &:hover{
+                color: $color_beige;
+            }
+        }
+    }
+    .lists{
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: 425px) {
+            display: flex;
+            flex-direction: column;
+        }
+        &ul>li,ul{
+            list-style-type: none;
+            @media screen and (max-width: 425px){
+                padding: 0px;               
+            }
+        }
+        &_link{
+          @include linkFooter;
+            &:hover{
+                color: $color_beige;
+            }
+        }
+    }
+}
+
+// Page Panier
+.panier2Button{
+    margin-top: 50px;
+    text-align: center;
+}
+
+// page contact + connexion
+.formulaire, .formulaire2{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-family: $font_poppins;
+    margin: auto;
+    width: 60%;
+    @media screen and (max-width: 768px) {
+        width: 90%;
+    }
+    &_nom, &_prenom, &_email, &_question, &_firstname, &_password, &_confirmpassword{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        input, textarea{
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
+    &_password{
+        .eyes{
+            position: relative;
+            &_open, &_close{
+                position: absolute;
+                right: 10px;
+                top: -38px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            &_close{
+                display: none;
+            }
+        }
+    }
+    &_title{
+        @include titleForm;
+        @media screen and (max-width: 768px) {
+            margin-top: 20px;
+            font-size: $font_h3;
+        }
+    }
+    &_btn{
+        text-align: center;
+    }
+    &_btn input{
+        background-color: $color_beige;
+        width: 20%;
+        color: $color_blue;
+        border-radius: 5px;
+        padding: 5px;
+        &:hover{
+            background-color: $color_blue;
+            color: $color_beige;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+        width: 100%;
+        }
+    }
+    &_link{
+        color: $color_blue;
+        text-decoration: none;
+    }
+}
+
+// cvg
+.cgv{
+    margin: auto;
+    width: 90%;
+    font-family: $font_poppins;
+    font-size: $font_p;
+    color: $color_blue;
+}
+
+// apropos
+.Apropos{
+    font-family: $font_poppins;
+    font-size: $font_p;
+    color: $color_blue;
+    .Apropos_img{
+        background-image: linear-gradient(to bottom, $color_white 50%, $color_beige 50%);
+        &--img{
+            width: 50%;
+            margin: auto;
+            @media screen and (max-width: 768px) {
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+    &_text{
+        padding: 80px;
+        background-color: $color_beige;
+        @media screen and (max-width: 768px) {
+            padding: 20px;
+            font-size: 15px;
+        }
+    }
+}
+
+// panier
+.card{
+    background-color: $color_beige;
+    border: none;
+}
+
+// panierButton
+.panierQuantity{
+    border: 1px solid $color_blue;
+    padding: 50px;
+    border-radius: 50%;
+    color: $color_blue;
+}
+
+
+
+
+

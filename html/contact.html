@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/style.css">
+    <link rel="icon" type="image/jpeg" href="../images/Autres/favicon.jpeg" />
+    <title>ECF-Contact</title>
+  </head>
+  <body>
+    <header>
+        <div class="head">
+            <div class="headMobile">
+                <h1>Men's Shop</h1>
+            </div>
+            <div class="logos">
+                <div class="connexion">
+                    <a href="connexion.html" class="connexion_link"><img src="../images/NavLogo/connexion.png" alt="Logo Connexion"><p>mon compte</p></a>
+                </div>
+                <div class="panier">
+                    <a href="panier.html" class="panier_link"><img src="../images/NavLogo/panier.png" alt="Logo Panier"><p>mon panier</p></a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="navbar_link">Accueil</a>
+            <div class="menu">
+                <a href="#" class="navbar_link">Sport</a>
+                <div class="menuDeroulant">
+                    <ul>
+                        <li><a href="SportPages/short.html" class="MenuDeroulant_link">Shorts</a></li>
+                        <li><a href="SportPages/tshirt.html" class="MenuDeroulant_link">Tshirts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#" class="navbar_link">Les Essentiels</a>
+                <div class="menuDeroulant">
+                    <ul>
+                        <li><a href="EssentielPages/jean.html" class="MenuDeroulant_link">Jeans</a></li>
+                        <li><a href="EssentielPages/chemise.html" class="MenuDeroulant_link">Chemises</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="contact.html" class="navbar_link">Contact</a>
+        </nav> 
+    </header>
+    <section>
+        <div class="formulaire">
+            <h2 class="formulaire_title">Contactez-nous</h2>
+            <form id="form" name='formValidate'>
+                <div class="formulaire_nom">
+                    <label for="name">Votre nom :</label>
+                    <input type="text" id="name" name="name" autocomplete="off">
+                    <small></small>
+                </div><br>
+                <div class="formulaire_email">
+                    <label for="email">Indiquez-nous votre adresse email :</label>
+                    <input type="email" id="email" name="email" autocomplete="off">
+                    <small></small>
+                </div><br>
+                <div class="formulaire_question">
+                    <label for="message">Votre Question :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Ecrivez votre message..."></textarea>
+                    <small></small>
+                </div>
+                <div class="formulaire_btn mt-3 mb-5">
+                  <input type="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+      <div class="footer">
+        <div class="network">
+          <h4 class="network_title">Suivez nous</h4>
+          <ul>
+              <li><a href="https://www.facebook.com/?locale=fr_FR" class="network_link"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/" class="network_link"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="https://twitter.com/?lang=fr" class="network_link"><i class="fa-brands fa-twitter"></i></a></li>
+          </ul>
+      </div>
+        <div class="lists">
+          <ul>
+              <li><h4>Acces Rapide</h4></li>
+              <ul>
+                  <li><a href="connexion.html" class="lists_link">> Mon compte</a></li>
+                  <li><a href="panier.html" class="lists_link">> Panier</a></li>
+                  <li><a href="Apropos.html" class="lists_link">> Qui sommes-nous ?</a></li>
+                  <li><a href="contact.html" class="lists_link">> Contact</a></li>
+                  <li><a href="cgv.html" class="lists_link">> Conditions generales</a></li>
+              </ul>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/form1.js"></script>
+  </body>
+</html>
